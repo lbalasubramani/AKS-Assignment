@@ -10,6 +10,8 @@ COPY . /app
 
 RUN python db.py
 
+RUN python tests.py 
+
 EXPOSE 5000
 
 CMD [ "python", "-m", "flask", "run", "--host=0.0.0.0" ]
