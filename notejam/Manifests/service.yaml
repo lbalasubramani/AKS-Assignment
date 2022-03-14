@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: notejam-webapp-service
+  labels: 
+    app: notejam-webapp
+spec:
+  type: LoadBalancer
+  selector:
+    app: notejam-webapp
+  ports: 
+    - port: 80
+      targetPort: 5000

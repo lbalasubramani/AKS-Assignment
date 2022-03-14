@@ -1,0 +1,11 @@
+Task: 
+  Pipeline agents: 
+      MS hosted, fresh vm everytime, maintenance and upgrades
+      self-hosted - install dependent software, machine level cache and persistent run
+      Parallel jobs - MS hosted
+      Capabilities
+  Working with Containers:
+      Container, Image, Docker Engine, Registry, Repository, Dockerfile
+  Working with AKS: 
+      
+

@@ -1,0 +1,51 @@
+apiVersion: apps/v1
+kind: Deployment 
+metadata:
+  name: notejam-webapp
+  labels:
+    app: notejam-webapp
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: notejam-webapp
+  template:  
+    metadata:
+      labels: 
+        app: notejam-webapp
+    spec:   
+      containers:
+        - name: notejam-webapp
+          image: notejamacr.azurecr.io/latest/notejam
+          imagePullPolicy: Always
+          ports: 
+            - containerPort: 8080  
+          resources:
+            requests:
+              cpu: "100m" 
+              memory: "128Mi"
+            limits:
+              cpu: "200m"
+              memory: "256Mi"     
+          env:
+            - name: DB_HOSTNAME
+              value: "aksnotejamdb.mysql.database.azure.com"            
+            - name: DB_PORT
+              value: "3306"            
+            - name: DB_NAME
+              value: "notejamdb"            
+            - name: DB_USERNAME
+              value: "devadmin@aksnotejamdb"            
+            - name: DB_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: mysql-db-password
+                  key: db-password       
+        
+      volumes: 
+        - name: notejam-persistent-storage
+          persistentVolumeClaim:
+            claimName: azure-managed-disk-pvc
+        - name: notejam-dbcreation-script
+          configMap:
+            name: notejam-dbcreation-script

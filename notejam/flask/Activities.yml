@@ -1,0 +1,55 @@
+Activity 0:
+  Architecture Diagram
+  Technical Documentation explaining the project 
+  Additional Implementation and Future Proposal
+  Kubernetes
+  Cost Management 
+  Roadmap to Minimum viable product 
+
+Activity 1:
+  Clone the Git-hub Repo
+  Run the Application 
+  Create a Docker File
+  Build a Docker Image and run a Container
+  Push the Image to ACR.
+  Provision a AKS Cluster
+  Deploy a Manifest file referring the Image 
+  Run the Application in AKS
+
+Activity 2:
+  Create TF files
+  Create Multi stage yaml pipeline
+  Build a CICD Pipeline 
+  Provision Azure Resources via CICD Pipeline
+
+Activity 2a: 
+  Azure Deployment with Terraform and Azure Devops
+    1. 
+
+Activity 3:
+  Create Manifests file
+  Create a Multi stage yaml pipeline for AKS Deployment 
+  Build a CICD Pipeline 
+  Deploy to AKS via CICD
+
+Activity 4: 
+  Helm chart for Deployment 
+  Build a CICD Pipeline 
+  Deployment using Helm and CICD
+
+Tools Used: 
+  1. Azure Cloud
+  2. Terraform 
+  3. Azure CICD
+  4. AKS
+  5. Helm
+
+Azure Resources: 
+  0. Resource group
+  1. Virtual Network 
+  2. Azure Kubernetes service
+  3. Azure Container Registry 
+  4. Key vault
+  5. Storage Account 
+  6. Azure Traffic manager
+  7. Azure Load Balancer

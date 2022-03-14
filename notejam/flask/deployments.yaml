@@ -1,0 +1,37 @@
+apiVersion: apps/v1
+kind: Deployment 
+metadata:
+  name: notejam-webapp
+  labels:
+    app: notejam-webapp
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: notejam-webapp
+  template:  
+    metadata:
+      labels: 
+        app: notejam-webapp
+    spec:
+      initContainers:
+        - name: init-db
+          image: busybox:1.31
+          command: ['sh', '-c', 'echo -e "Checking for the availability of MySQL Server deployment"; while ! nc -z mysql 3306; do sleep 1; printf "-"; done; echo -e "  >> MySQL DB Server has started";']      
+      containers:
+        - name: notejam-webapp
+          image: notejamacr.azurecr.io/latest/notejam
+          imagePullPolicy: Always
+          ports: 
+            - containerPort: 8080           
+          env:
+            - name: DB_HOSTNAME
+              value: "aksnotejamdb.mysql.database.azure.com"            
+            - name: DB_PORT
+              value: "3306"            
+            - name: DB_NAME
+              value: "notejamdb"            
+            - name: DB_USERNAME
+              value: "devadmin@aksnotejamdb"            
+            - name: DB_PASSWORD
+              value: "Passw0rd1234" 

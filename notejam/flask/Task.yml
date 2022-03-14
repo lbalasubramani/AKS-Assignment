@@ -1,0 +1,52 @@
+Task0: Not yet
+  1. Architecture Diagram 
+  2. Technical Documentation
+  3. Additional Solution
+  4. Future Proposal
+  5. Cost Management - Business
+  6. Roadmaps to Minimum viable product
+  7. Disaster Recovery and bcp
+  8. Monitoring 
+  9. Networking and security 
+  10. unit testing 
+
+Task1: (Done)
+  1. Clone the Git Repo 
+  2. Run the Application (Python or PHP) locally
+  3. Containerize the Application writing a Docker File. 
+  4. Build the Image and Run in a Docker Locally
+
+Task2: (Done)
+  1. Push the Image to Azure Container Registry. 
+  2. Build Yaml files and reference the Image. 
+  3. Deploy the Application to the AKS Cluster.   
+ 
+Task3: Done
+  0. Create a Self-hosted Agent. - done
+  1. Build a Azure CICD pipeline 
+  2. Create Terraform Modules. 
+  3. Provision Azure Infrastructure via Azure Devops
+
+Task4: Done
+  1. Create a CICD Pipeline
+  2.  a. Build the Docker Image
+  3.  b. Pushing to the Regsitry
+  4.  c. Releases to AKS Cluster 
+
+Task5: 
+  1. CICD Pipeline
+  2. Helm Chart to Deploy Yaml files to AKS
+
+
+Kubernetes Depth: 
+
+Suggestions: 
+  1. Azure key vault integration for secrets 
+  2. Azure ACR to AKS Integration 
+  3. Pods enhancement 
+  4. aks - policies 
+  5. volume mount with keyvault 
+  6. Devsecops - container security 
+  7. costs - Automation acc., Autoscaling
+  8. Templatize 
+  
